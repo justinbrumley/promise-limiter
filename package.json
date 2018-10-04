@@ -1,0 +1,8 @@
+{
+  "name": "promise-limit",
+  "version": "1.0.0",
+  "description": "Limit the number of promise returning functions running at once",
+  "main": "index.js",
+  "author": "Justin Brumley <justinbrumley012@gmail.com>",
+  "license": "MIT"
+}
