@@ -14,7 +14,7 @@ console.log(results);
 // [1, 4, 9, 16, 25]
 ```
 
-The second paramter can also be an options obj:
+The second parameter can also be an options obj:
 ```javascript
 PromiseLimit(arr, {
   ignoreErrors: true,
