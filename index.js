@@ -25,7 +25,7 @@ const PromiseLimit = async (arr, opts, fn) => {
 
     let results;
     try {
-      results = await fn(arg);
+      results = await fn(arg, i);
     } catch (err) {
       if (!ignoreErrors) throw new Error(err);
     }
