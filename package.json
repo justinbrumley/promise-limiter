@@ -1,6 +1,6 @@
 {
   "name": "promise-limiter",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Limit the number of promise returning functions running at once",
   "main": "index.js",
   "author": "Justin Brumley <justinbrumley012@gmail.com>",

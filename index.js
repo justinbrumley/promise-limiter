@@ -4,7 +4,7 @@ const wait = async (t) => (
   )
 );
 
-const PromiseLimit = async (arr, opts, fn) => {
+async function PromiseLimit(arr, opts, fn) {
   let limit;
   let ignoreErrors = false;
 
@@ -20,19 +20,20 @@ const PromiseLimit = async (arr, opts, fn) => {
   }
 
   let a = 0;
-  const work = async (arg, i) => {
+
+  async function work(arg, i) {
     a += 1;
 
     let results;
     try {
       results = await fn(arg, i);
     } catch (err) {
-      if (!ignoreErrors) throw new Error(err);
+      if (!ignoreErrors) return Promise.reject(err);
     }
 
     a -= 1;
     return results;
-  };
+  }
 
   const ret = [];
   for (let i = 0; i < arr.length; i += 1) {
@@ -50,5 +51,11 @@ const PromiseLimit = async (arr, opts, fn) => {
 
   return Promise.all(ret);
 }
+
+/*
+PromiseLimit([1,2,3,4,5,6,7,8,9,0], 4, function test(x) {
+  if (x === 0) throw new Error('blah');
+});
+*/
 
 module.exports = PromiseLimit;
